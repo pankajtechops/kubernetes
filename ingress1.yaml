@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kibana-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: 172-105-45-252.ip.linodeusercontent.com
+      http:
+        paths:
+          - backend:
+              serviceName: kibana-kibana
+              servicePort: 5601
